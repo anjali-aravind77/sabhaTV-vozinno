@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+    "target": "https://api.sabha.tv/v1/gethomevideos",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+    }
+    }

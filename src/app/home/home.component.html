@@ -1,0 +1,317 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Live <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Originals <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">TalkShow <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">New Arrivals <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Documentries <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Series <span class="sr-only">(current)</span></a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">hello</button>
+      </form>
+    </div>
+  </nav>
+
+  <body>
+    
+
+<!-- carousel section -->
+
+<div class="row">
+<div class="container-fluid">
+ <ngb-carousel *ngIf="slides">
+    <ng-template ngbSlide *ngFor="let slide of slides">
+      <div class="wrapper">
+        <img src="{{slide.thumburl}}" class="image_size" alt="Random slide">
+      </div>      
+    </ng-template>   
+  </ngb-carousel>
+</div>
+</div>
+
+<!-- categories sections -->
+
+<div class="categories">
+
+  <!-- live section -->
+
+  <div class="row">
+    <div class="col-10">
+      <h6>Live</h6>
+    </div>
+    <div class="col-2">
+      <h6>View All</h6>
+    </div>
+  </div>
+
+
+  <div *ngIf="live_videos"> 
+    <carousel>  
+      <div class="carousel-cell"  *ngFor="let live_image of live_videos">
+        <img src="{{live_image.thumburl}}" alt="live stream">
+      </div>
+    </carousel>
+  </div>
+
+
+<!-- new arrivals section -->
+
+  <div class="row">
+    <div class="col-10">
+      <h6>New Arrivals</h6>
+    </div>
+    <div class="col-2">
+      <h6>View All</h6>
+    </div>
+  </div>
+
+  <div *ngIf="arrivals">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let a of arrivals">
+        <img src="{{a.thumburl}}" alt="new arrivals">
+      </div>
+    </carousel>
+  </div>
+
+  <!-- documentary section -->
+
+  <div class="row">
+    <div class="col-10">
+      <h6>Documentries</h6>
+    </div>
+    <div class="col-2">
+      <h6>View All</h6>
+    </div>
+  </div>
+
+  <div *ngIf="documentries">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let d of documentries">
+        <img src="{{d.thumburl}}" alt="Documentaries">
+      </div>
+    </carousel>
+  </div>
+
+  <div class="row">
+    <div class="col-10">
+      <h6>Sabha TV Originals</h6>
+    </div>
+    <div class="col-2">
+      <h6>View All</h6>
+    </div>
+  </div>
+
+  <div *ngIf="originals">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let o of originals">
+        <img src="{{o.thumburl}}"  alt="originals">
+      </div>
+    </carousel>
+  </div>
+
+  <div class="row">
+    <div class="col-10">
+      <h6>Talk Show</h6>
+    </div>
+    <div class="col-2">
+      <h6>View All</h6>
+    </div>
+  </div>
+
+  <div *ngIf="talk_show">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let t of talk_show">
+        <img src="{{t.thumburl}}"  alt="talk show">
+      </div>
+    </carousel>
+  </div>
+
+<!-- series -->
+
+<div class="row">
+  <div class="col-10">
+    <h6>Series</h6>
+  </div>
+  <div class="col-2">
+    <h6>View All</h6>
+  </div>
+</div>
+
+<!-- <div *ngIf="series_array">
+  <carousel>
+    <div class="carousel-cell"  *ngFor="let sa of series_array">
+      <div *ngIf='{{sa.type == "series"}}'>
+        <img src='{{sa.thumburl}}' alt="talk show">
+      </div>
+    </div>
+  </carousel>
+</div> -->
+
+</div>
+
+<!-- Footer -->
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Footer links -->
+    <div class="row text-center text-md-left mt-3 pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+        <p>
+          <a href="#!">MDBootstrap</a>
+        </p>
+        <p>
+          <a href="#!">MDWordPress</a>
+        </p>
+        <p>
+          <a href="#!">BrandFlow</a>
+        </p>
+        <p>
+          <a href="#!">Bootstrap Angular</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+        <p>
+          <a href="#!">Your Account</a>
+        </p>
+        <p>
+          <a href="#!">Become an Affiliate</a>
+        </p>
+        <p>
+          <a href="#!">Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+      </div>
+
+      <!-- Grid column -->
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+        <p>
+          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p>
+          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Footer links -->
+
+    <hr>
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8">
+
+        <!--Copyright-->
+        <p class="text-center text-md-left">© 2020 Copyright:
+          <a href="https://mdbootstrap.com/">
+            <strong> MDBootstrap.com</strong>
+          </a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-google-plus-g"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+</footer>
+<!-- Footer -->
+</body>
+
+
+
+ 

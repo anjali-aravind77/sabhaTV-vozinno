@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -66,7 +67,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "sabhaTV:build:production"
+              "browserTarget": "sabhaTV:build:production",
+              "proxyConfig": "proxy.conf.json"
             }
           }
         },
@@ -119,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sabhaTV"
+    }
+  },
+  "defaultProject": "sabhaTV",
+  "cli": {
+    "analytics": false
+  }
 }
