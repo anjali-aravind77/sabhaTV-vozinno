@@ -12,19 +12,16 @@ export class HomeComponent implements OnInit {
   live_videos;
   arrivals;
   documentries;
-  series; originals;
+  series: string[] = []; originals;
   talk_show;
-  series_array;
-  
+ 
   constructor(private dataservice:DataService) { 
     this.getBanners();
-    this.getHomeVideos();
-    
+    this.getHomeVideos();    
   }
 
   ngOnInit(): void {
   }
-
 
   getBanners() {
     this.dataservice.getBanners()
@@ -34,25 +31,25 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  getHomeVideos() {
-    var i=0;
-    
+  getHomeVideos() {           
     this.dataservice.getHomeVideos()
-    .subscribe((resp: any) => {   
-      
+    .subscribe((resp: any) => {       
       this.documentries = resp.data[0]['videos'];
       this.live_videos = resp.data[1]['videos'];
       this.arrivals = resp.data[2]['videos'];
       this.originals = resp.data[3]['videos'];
-      this.talk_show = resp.data[4]['videos'];
-      // for(i=0; i<10 ; i++) {
-      //  this.series_array.push(resp.data[i]['videos']);
-     
-      // }
-      // this.series = (resp.data['videos'].filter(x => x.type == 'series'));
-      
-      // console.log(resp.data['videos'])
-     
+      this.talk_show = resp.data[4]['videos'];  
+       
+
+        for(var j in resp.data) {
+          for(var k in resp.data[j].videos) {
+            if(resp.data[j].videos[k]['type'] == 'series') {           
+              this.series.push(resp.data[j].videos[k])
+            }
+          }
+        }      
+    
     })
   }
+ 
 }

@@ -116,6 +116,29 @@
     </carousel>
   </div>
 
+  <!-- series -->
+
+<div class="row">
+  <div class="col-10">
+    <h6>Series</h6>
+  </div>
+  <div class="col-2">
+    <h6>View All</h6>
+  </div>
+</div>
+
+  <div *ngIf="originals">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let sa of series">
+    
+        <img src='{{sa.thumburl}}' alt="series videos">
+      
+      </div>
+    </carousel>
+  </div>
+
+  <!-- Sabha TV Originals -->
+
   <div class="row">
     <div class="col-10">
       <h6>Sabha TV Originals</h6>
@@ -150,26 +173,8 @@
     </carousel>
   </div>
 
-<!-- series -->
 
-<div class="row">
-  <div class="col-10">
-    <h6>Series</h6>
-  </div>
-  <div class="col-2">
-    <h6>View All</h6>
-  </div>
-</div>
 
-<!-- <div *ngIf="series_array">
-  <carousel>
-    <div class="carousel-cell"  *ngFor="let sa of series_array">
-      <div *ngIf='{{sa.type == "series"}}'>
-        <img src='{{sa.thumburl}}' alt="talk show">
-      </div>
-    </div>
-  </carousel>
-</div> -->
 
 </div>
 
