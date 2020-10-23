@@ -9,12 +9,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgImageSliderModule } from 'ng-image-slider';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
-// import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
     ReactiveFormsModule,
     HttpClientModule,
     NgImageSliderModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    FontAwesomeModule
     // CarouselModule
   ],
   providers: [],
